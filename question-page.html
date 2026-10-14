@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Concept: Start investing with less than $100</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+/* Colours, font and shapes taken from friendsthatinvest.com (Oct 2026) */
+:root{
+  --sky:#98CAF2; --blue:#1990C6; --green:#10BF7A;
+  --ink:#000000; --muted:#5B6470; --bg:#FFFFFF; --soft:#EEF6FD; --line:#DCE9F5;
+  --note:#FFF4D6; --note-ink:#6A4B00;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Bricolage Grotesque",system-ui,sans-serif}
+a{color:var(--green);font-weight:500}
+.concept-bar{position:sticky;top:0;z-index:5;background:#111;color:#fff;font-size:13px;
+  padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.concept-bar button{font:inherit;font-weight:700;border:0;border-radius:8px;padding:6px 14px;cursor:pointer;background:var(--note);color:var(--note-ink)}
+.hero{background:var(--sky);padding:32px 16px 36px}
+.hero-inner,main{max-width:680px;margin:0 auto}
+main{padding:8px 16px 64px}
+.eyebrow{display:inline-block;background:#fff;border-radius:30px;padding:4px 12px;font-size:13px;font-weight:700}
+h1{font-weight:800;font-size:clamp(30px,7vw,46px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 10px}
+h2{font-weight:800;font-size:26px;line-height:1.2;letter-spacing:-.01em;margin:40px 0 12px}
+h3{font-size:19px;font-weight:700;margin:0 0 6px}
+.meta{font-size:14px}
+.answer{background:#fff;border-radius:16px;padding:20px 22px;margin:22px 0 0;box-shadow:0 2px 0 #000}
+.answer p{margin:0 0 12px;font-size:18px;line-height:1.5}
+.answer ol{margin:0;padding-left:22px}
+.answer li{margin:4px 0;font-weight:500}
+.quote{font-style:italic}
+.step{background:var(--soft);border-radius:16px;padding:18px 20px;margin:14px 0;display:grid;grid-template-columns:40px 1fr;gap:4px 14px}
+.num{grid-row:span 4;width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.step p{margin:0 0 8px}
+.src{font-size:13px;color:var(--muted);margin-top:2px}
+.src a{color:var(--blue)}
+.listen{font-size:14px}
+.gloss{color:var(--green);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.gloss::after{content:" ↗";font-size:12px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-variant-numeric:tabular-nums;border-radius:16px;overflow:hidden;background:var(--soft)}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{font-size:13px;color:var(--muted);font-weight:700}
+.small{font-size:13px;color:var(--muted)}
+.story{background:var(--soft);border-radius:16px;padding:18px 20px;margin:20px 0;font-size:17px}
+.story .small{display:block;margin-top:6px}
+.cta{background:var(--blue);color:#fff;border-radius:16px;padding:24px;margin:36px 0 16px}
+.cta h2{margin:0 0 6px;color:#fff}
+.cta p{margin:0 0 16px}
+.cta form{display:flex;gap:8px;flex-wrap:wrap}
+.cta input{flex:1 1 200px;min-width:0;padding:12px 16px;border-radius:30px;border:1px solid #000;font:inherit}
+.btn{padding:12px 20px;border-radius:8px;border:0;background:var(--green);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.next{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.next{grid-template-columns:1fr}}
+.next a{display:block;background:var(--soft);border-radius:16px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.next a span{display:block;font-size:13px;color:var(--muted);font-weight:400}
+.sources{font-size:14px;color:var(--muted);padding-left:20px}
+.sources li{margin:4px 0}
+.sources a{color:var(--blue)}
+.dn{display:none;background:var(--note);color:var(--note-ink);border-radius:12px;padding:12px 14px;margin:10px 0 14px;font-size:14px;line-height:1.5}
+.dn b{display:block;margin-bottom:2px}
+body.notes .dn{display:block}
+.footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+
+dialog.g{border:0;border-radius:16px;padding:0;max-width:520px;width:calc(100% - 32px);box-shadow:0 10px 40px rgba(0,0,0,.25);font:inherit;color:var(--ink)}
+dialog.g::backdrop{background:rgba(0,0,0,.35)}
+.g-head{background:var(--sky);padding:16px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.g-head h3{margin:0;font-size:22px;font-weight:800}
+.g-tag{display:inline-block;font-size:12px;font-weight:700;background:#fff;border-radius:30px;padding:2px 10px;margin-bottom:6px}
+.g-close{border:0;background:#fff;border-radius:8px;font:inherit;font-weight:700;padding:4px 10px;cursor:pointer}
+.g-body{padding:16px 20px 20px}
+.g-body p{margin:0 0 10px}
+.g-src{font-size:13px;color:var(--muted)}
+.g-src a{color:var(--blue)}
+.g-draft{background:var(--note);color:var(--note-ink);font-size:13px;border-radius:8px;padding:8px 10px;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="concept-bar">
+  <span>Concept page by Sana Ahmad. Not created, published or endorsed by Friends That Invest.</span>
+  <button id="toggle" aria-pressed="false">Show design notes</button>
+</div>
+
+<div class="hero"><div class="hero-inner">
+  <span class="eyebrow">Getting started · Beginner</span>
+  <div class="dn"><b>Design note 1 · Looks like it already belongs</b>Font (Bricolage Grotesque), sky blue, deep blue, green links and rounded shapes are taken from friendsthatinvest.com, so the page could sit on the existing Shopify site as a blog post.</div>
+  <h1>How can I start investing with less than $100?</h1>
+  <p class="meta">A beginner's guide for women who've never invested before · 6 min read · Updated October 2026</p>
+  <div class="dn"><b>Design note 2 · The headline is the question</b>It uses the words beginners type. 13 of 18 real questions collected were some form of "where do I start?", and searches with "as a woman" surfaced a competitor, Female Invest, but never FTI.</div>
+
+  <div class="answer" aria-label="Short answer">
+    <p><strong>The short answer:</strong> you don't need a lot of money to start. Tools like ETFs and fractional shares let you buy a small slice of the market, and the most important step is the first one. As Sim says, <span class="quote">"I always recommend keeping it simple when you begin."</span></p>
+    <ol>
+      <li>Check your safety net first</li>
+      <li>Choose a regulated app that suits small amounts</li>
+      <li>Buy a broad, low-cost index fund</li>
+    </ol>
+  </div>
+</div></div>
+
+<main>
+  <div class="dn"><b>Design note 3 · Answer first</b>The answer and the first three steps fit on one phone screen. Today's pages (including competitors') open with context instead. A short answer up top is also what AI tools tend to quote.</div>
+
+  <h2>Before you start: is this for you?</h2>
+  <p>This guide is for you if you've been meaning to invest "when you have more money", and that day hasn't come. If you've grown up being told money isn't your area, you're in very good company. Many of the women in the Friends That Invest community started exactly there.</p>
+
+  <h2>The 5 steps</h2>
+  <div class="dn"><b>Design note 4 · Numbered steps, each with its source</b>Readers skim, so each step is one card with one action. Every step shows where the advice comes from in FTI's own content, so nothing is invented and readers can go deeper.</div>
+
+  <div class="step">
+    <div class="num">1</div>
+    <h3>Check your safety net first</h3>
+    <p>Before investing, pay off high-interest debt like credit cards, and build up some emergency savings. As one Stock Market Tea issue put it, an emergency fund is <span class="quote">"there for the moments you never see coming."</span></p>
+    <p class="listen">Not sure which comes first? Use the free <a href="https://friendsthatinvest.kit.com/guide">Invest or pay off debt flowchart</a>.</p>
+    <p class="src">From: podcast <a href="https://shows.acast.com/girls-that-invest/episodes/s7t54">How to Invest Even When You're Broke</a> (Sept 2024) · Stock Market Tea, 10 Aug 2026</p>
+  </div>
+
+  <div class="step">
+    <div class="num">2</div>
+    <h3>Choose a regulated app that suits small amounts</h3>
+    <p>Look for a platform that offers <a class="gloss" href="#" data-term="fractional">fractional shares</a>, so you can buy part of a share instead of a whole one, and check that it's regulated in your country. Fees matter too, especially when you're investing small amounts.</p>
+    <p class="src">From: podcast <a href="https://shows.acast.com/girls-that-invest/episodes/s7t54">How to Invest Even When You're Broke</a> · Investing Masterclass, Module 8: Choosing an Investing Broker and Fees 101</p>
+  </div>
+  <div class="dn"><b>Design note 5 · To confirm with Sim</b>FTI teaches how to choose a broker and compare fees in the Masterclass, but that content isn't public. Her exact criteria and a worked fee example would replace the general wording here.</div>
+
+  <div class="step">
+    <div class="num">3</div>
+    <h3>Buy a broad, low-cost index fund</h3>
+    <p>Instead of picking individual companies, an index fund or ETF lets you own a small piece of hundreds of companies at once. This is called <a class="gloss" href="#" data-term="passive">passive investing</a>.</p>
+    <p class="listen">🎧 <a href="https://open.spotify.com/episode/0EjHXut6jsyw7pEziLLigS">Index Funds Are Changing: Here's What You Need to Know</a> · <a href="https://open.spotify.com/episode/76nUlcOaorFjlgnvhpGFHo">Why I'm Not Selling My S&amp;P500 Funds</a></p>
+    <p class="src">From: podcast episodes above (June and August 2026) · Stock Market Tea explainer "Passive Investing", 8 June 2026</p>
+  </div>
+  <div class="dn"><b>Design note 6 · Green links stay on FTI</b>Words in green with an arrow are glossary terms. Stock Market Tea has written a plain-language explainer every week for 200+ issues, but all 26 audited explainers send readers to Investopedia. Here, tapping a green term opens FTI's own definition instead. "Passive investing" uses FTI's explainer word for word.</div>
+
+  <div class="step">
+    <div class="num">4</div>
+    <h3>Set it to repeat automatically</h3>
+    <p>Choose an amount you're comfortable with and schedule it for the same day every month, ideally just after payday. Investing a fixed amount regularly is called <a class="gloss" href="#" data-term="dca">dollar cost averaging</a>, and it means you don't have to guess the "right" day. It's how Sim invests herself: <span class="quote">"my investing strategy is on auto-invest… I also dollar cost average instead of trying to time the market."</span></p>
+    <p class="src">From: Sim's interview with <a href="https://sorted.org.nz/blog/my-money-sorted-simran/">Sorted</a></p>
+  </div>
+
+  <div class="step">
+    <div class="num">5</div>
+    <h3>Leave it alone</h3>
+    <p>Markets go up and down. The hardest part is not reacting. Talking about KiwiSaver, Sim put it simply: <span class="quote">"you shouldn't be pulling your money out of KiwiSaver when the market drops, because it actually solidifies your losses."</span></p>
+    <p class="listen">🎧 <a href="https://open.spotify.com/episode/1UwMG7p9Zi09IBX0jhmLoo">I Tried To Time The Market, This Happened (Learn From My Mistake)</a></p>
+    <p class="src">From: Sim's interview with <a href="https://thespinoff.co.nz/_/04-07-2023/this-is-kiwi-simran-kaur-on-owning-your-financial-future">The Spinoff</a> · podcast episode above (Aug 2026)</p>
+  </div>
+  <div class="dn"><b>Design note 7 · The podcast archive gets a second life</b>Five years of free episodes are hard to find by topic. Placing the right episode inside the step where it helps turns a one-week listen into a permanent resource.</div>
+
+  <h2>What small amounts could grow into</h2>
+  <table>
+    <thead><tr><th>Each month</th><th>For</th><th>You put in</th><th>Could grow to</th></tr></thead>
+    <tbody>
+      <tr><td>$25</td><td>10 years</td><td>$3,000</td><td>$4,327</td></tr>
+      <tr><td>$50</td><td>10 years</td><td>$6,000</td><td>$8,654</td></tr>
+      <tr><td>$50</td><td>20 years</td><td>$12,000</td><td>$26,046</td></tr>
+      <tr><td>$100</td><td>20 years</td><td>$24,000</td><td>$52,093</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Illustration only, not financial advice. Uses the same assumptions as the calculator on friendsthatinvest.com: a constant 7% yearly return, compounded monthly, with contributions at the end of each month. Real returns vary and investments can fall in value. <a href="https://friendsthatinvest.kit.com/calculator">Try your own numbers with the free investment calculator.</a></p>
+  <div class="dn"><b>Design note 8 · Same maths as FTI's own calculator</b>The figures use the exact assumptions on FTI's homepage calculator, so the page and the free tool agree, and the tool is one tap away.</div>
+
+  <div class="story">"One of our Besties shared that after starting her investing journey in 2022, she committed to investing $150 a week. Fast forward to today, and that has grown to over $41,000."<span class="small">Investie Bestie story, Stock Market Tea, 11 May 2026</span></div>
+  <div class="dn"><b>Design note 9 · Real reader stories as proof</b>Every newsletter already features a reader's story. Reusing the right one shows a beginner someone like her who did it.</div>
+
+  <div class="cta">
+    <h2>Get one step closer every week 🩷</h2>
+    <p>Join 140,000+ investors in training. Stock Market Tea explains the markets in plain language, in under 5 minutes a week.</p>
+    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Concept only';">
+      <input type="email" placeholder="Your email" aria-label="Email address">
+      <button class="btn" type="submit">Subscribe free</button>
+    </form>
+  </div>
+  <div class="dn"><b>Design note 10 · A next step for every reader</b>Today there is no path from a search to FTI between launches. This box turns a searcher into a subscriber, and subscribers into the next Masterclass cohort. Sign-ups here are the main thing a pilot would measure.</div>
+
+  <h2>What to read next</h2>
+  <div class="next">
+    <a href="#"><strong>What are the best investing apps for beginners?</strong><span>Next question page (concept)</span></a>
+    <a href="#"><strong>ETFs vs index funds: what's the difference?</strong><span>Next question page (concept)</span></a>
+  </div>
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li>Friends That Invest podcast: <a href="https://shows.acast.com/girls-that-invest/episodes/s7t54">How to Invest Even When You're Broke</a> (9 Sept 2024), plus episodes linked in steps 3 and 5</li>
+    <li>Sorted: <a href="https://sorted.org.nz/blog/my-money-sorted-simran/">My money, sorted: Simran</a></li>
+    <li>The Spinoff: <a href="https://thespinoff.co.nz/_/04-07-2023/this-is-kiwi-simran-kaur-on-owning-your-financial-future">Simran Kaur on owning your financial future</a> (4 July 2023)</li>
+    <li>Stock Market Tea newsletter: 11 May, 8 June and 10 August 2026</li>
+    <li>Friends That Invest free resources: investment calculator, Invest or pay off debt flowchart</li>
+  </ul>
+  <div class="dn"><b>Design note 11 · Sources and a date</b>A visible update date and named sources build trust with readers, and research on AI search (Aggarwal et al., 2024) found that cited sources make pages more likely to be used in AI answers.</div>
+
+  <div class="footer">
+    Friends That Invest does not provide personalised investing advice. Content is general and educational only.<br><br>
+    <strong>About this concept:</strong> an independent prototype by Sana Ahmad, part of a case study on making Friends That Invest's existing content findable. Built only from FTI's public podcast, newsletter, free tools and Sim's published interviews. Not affiliated with or endorsed by Friends That Invest.
+  </div>
+</main>
+
+<script>
+const b=document.getElementById('toggle');
+b.addEventListener('click',()=>{
+  const on=document.body.classList.toggle('notes');
+  b.textContent=on?'Hide design notes':'Show design notes';
+  b.setAttribute('aria-pressed',on);
+});
+</script>
+
+<dialog class="g" id="gloss" aria-labelledby="g-title">
+  <div class="g-head"><div><span class="g-tag">FTI glossary</span><h3 id="g-title"></h3></div><button class="g-close" id="g-close" aria-label="Close">Close</button></div>
+  <div class="g-body" id="g-body"></div>
+</dialog>
+<script>
+const TERMS={
+ passive:{t:"Passive investing",b:`<p>Passive investing is an investment strategy that aims to match the performance of a market or index rather than trying to beat it. Instead of frequently buying and selling investments, passive investors typically buy and hold investments for the long term.</p><p>A common way to invest passively is through index funds or exchange traded funds (ETFs), which track a market index such as the S&amp;P 500. Because passive investing requires less trading and research, it often comes with lower fees than active investing.</p><p>Many investors choose passive investing because it offers broad diversification, lower costs, and a simple approach to building wealth over time.</p><p class="g-src">FTI's own explainer, word for word: Stock Market Tea, 8 June 2026. In this concept it lives on FTI's site instead of linking to Investopedia.</p>`},
+ fractional:{t:"Fractional shares",b:`<div class="g-draft">Draft definition: FTI hasn't published an explainer for this term yet.</div><p>A fractional share is part of one share. Instead of buying a whole share of a company or fund, you buy a slice of it, worth however much you choose to invest. It's what makes investing small amounts possible.</p><p class="g-src">Covered by Sim in the podcast <a href="https://shows.acast.com/girls-that-invest/episodes/s7t54">How to Invest Even When You're Broke</a> (Sept 2024).</p>`},
+ dca:{t:"Dollar cost averaging",b:`<div class="g-draft">Draft definition: FTI hasn't published an explainer for this term yet.</div><p>Dollar cost averaging means investing the same amount at regular times, like every month, whatever the market is doing. You end up buying more when prices are lower and less when they're higher, and you don't have to guess the "right" day to invest.</p><p class="g-src">Sim: "I also dollar cost average instead of trying to time the market." (<a href="https://sorted.org.nz/blog/my-money-sorted-simran/">Sorted</a>). Covered in depth in FTI's Substack article <a href="https://friendsthatinvest.substack.com/p/do-i-dollar-cost-average-or-lump">Do I Dollar Cost Average or Lump Sum Invest?</a></p>`}
+};
+const dlg=document.getElementById('gloss');
+document.querySelectorAll('a.gloss').forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault(); const d=TERMS[a.dataset.term];
+  document.getElementById('g-title').textContent=d.t; document.getElementById('g-body').innerHTML=d.b;
+  dlg.showModal();
+}));
+document.getElementById('g-close').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+</script>
+</body>
+</html>
